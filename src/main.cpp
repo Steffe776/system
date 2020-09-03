@@ -1,16 +1,14 @@
 #include <Arduino.h>
 
 void setup() {
-  pinMode(8, OUTPUT);
-  // put your setup code here, to run once:
+ Serial.begin(9600);
+ Serial.println("starting...");
 
 }
 
 void loop() {
-  digitalWrite(8, HIGH);   
-  delay(300);              
-  digitalWrite(8, LOW);   
-  delay(5000);  
-  // put your main code here, to run repeatedly:
-
+  int value = analogRead(A0);
+  float voltage = 5.0 * value / 1024;
+  Serial.println(value);
+  delay(2000);
 }
